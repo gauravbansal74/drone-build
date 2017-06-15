@@ -17,9 +17,9 @@ pipeline:
       - go build
       - go test
       
-  build:
-    image: golang:1.8
-    commands: sh ./ci/build.sh   
+  # build:
+  #   image: golang:1.8
+  #   commands: sh ./ci/build.sh   
 
   publish:
     image: plugins/docker
