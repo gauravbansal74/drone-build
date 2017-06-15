@@ -1,3 +1,5 @@
-echo `go get`
-echo `go clean`
-echo `go build`
+go get
+go clean
+go build
+
+ls
