@@ -26,7 +26,7 @@ pipeline:
     repo:  gauravbansal74/drone-build
     # commands: 
     #   - echo ${DRONE_TAG}
-    tags: 
+    # tags: 
     tags: [${DRONE_TAG##v}, ${DRONE_COMMIT_SHA:0:8}]
     username: gauravbansal74
     password: gbansal74
