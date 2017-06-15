@@ -5,14 +5,11 @@ workspace:
 pipeline:
   information:
     image: golang:1.8
-    commands: sh ./ci/build.sh   
+    commands: sh ./ci/info.sh   
 
   build:
     image: golang:1.8
-    commands:
-      - go get
-      - go build
-      - go test
+    commands: sh ./ci/build.sh   
 
   publish:
     image: plugins/docker
