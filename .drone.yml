@@ -23,7 +23,8 @@ pipeline:
 
   publish:
     image: plugins/docker
-    repo: gauravbansal74/drone-build
+    repo:  gauravbansal74/drone-build
+    commands: sh ./ci/build.sh 
     tags: ["latest1"]
     username: gauravbansal74
     password: gbansal74
