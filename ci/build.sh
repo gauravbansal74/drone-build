@@ -23,6 +23,4 @@ echo "{ \"version\":"\"$TAGINFO\"", \"short\":"\"$SHORTREV\"", \"status\":\"OK\"
 IMAGETAG=$IMAGENAME:$IMAGEREV
 
 echo " version is \" $TAGINFO \" Here"
-export DRONEBUILDTAG
-echo $DRONEBUILDTAG
 
