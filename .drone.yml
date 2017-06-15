@@ -19,4 +19,4 @@ pipeline:
       
   build:
     image: golang:1.8
-    commands: sh ci/build.sh    
+    commands: sh ./ci/build.sh    
