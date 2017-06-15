@@ -24,8 +24,8 @@ pipeline:
   publish:
     image: plugins/docker
     repo: gauravbansal74/drone-build
-    tags: [ "latest" ]
-    secrets: [ gauravbansal74, gbansal74 ]
+    tags: ["latest"]
+    secrets: ["gauravbansal74", "gbansal74"]
     when:
       branch: master
       event: push   
