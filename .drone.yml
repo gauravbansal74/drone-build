@@ -15,12 +15,16 @@ pipeline:
     commands:
       - go get
       - go build
-      - go test 
+      - go test
+      
+  build:
+    image: golang:1.8
+    commands: sh ./ci/build.sh   
 
   publish:
     image: plugins/docker
     repo:  gauravbansal74/drone-build
-    commands: sh ./ci/build.sh 
+    # commands: sh ./ci/build.sh 
     tags: [dronebuildtag]
     username: gauravbansal74
     password: gbansal74
