@@ -16,7 +16,7 @@ pipeline:
   publish:
     image: gauravbansal74/drone-build
     repo: gauravbansal74/drone-build
-    tags: [ "latest" ]
+    # tags: [ "latest" ]
     secrets: [ gauravbansal74, gbansal74 ]
     when:
       branch: master
