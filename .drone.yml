@@ -25,7 +25,8 @@ pipeline:
     image: plugins/docker
     repo:  gauravbansal74/drone-build
     # commands: sh ./ci/build.sh 
-    tags: ${DRONE_COMMIT_SHA:0:8}
+    # tags: ${DRONE_COMMIT_SHA:0:8}
+    tags: ${DRONE_TAG##v}
     username: gauravbansal74
     password: gbansal74
     # secrets: ["gauravbansal74", "gbansal74"]
