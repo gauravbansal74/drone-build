@@ -22,7 +22,7 @@ pipeline:
     commands: sh ./ci/build.sh   
 
   publish:
-    image: gauravbansal74/drone-build
+    image: plugins/docker
     repo: gauravbansal74/drone-build
     tags: [ "latest" ]
     secrets: [ gauravbansal74, gbansal74 ]
