@@ -1,7 +1,7 @@
 IMAGENAME=drone-build
 SHORTREV=`git rev-parse --short HEAD`
 BRANCH=`git branch | grep "*" | cut -d\  -f2`
-TAG=`git name-rev --tags --name-only $(git rev-parse HEAD)`
+TAG=`git describe --tags`
 
 if [ $TAG != "undefined" ]; then
     IMAGEREV=`echo $TAG | sed "s/\^0$//"`
