@@ -4,19 +4,20 @@ workspace:
 
 pipeline:
   test:
-    image: golang:1.8
+    image: golang:1.6
+    environment:
+      - CGO_ENABLED=0
     commands:
-      - go get -u github.com/drone/drone-ui/dist
-      - go get -u golang.org/x/tools/cmd/cover
-      - go test -cover $(go list ./... | grep -v /vendor/)
+      # Disabled: main.go:99: cli.StringSlice composite literal uses unkeyed fields
+      # - go vet
+      - go test -cover -coverprofile=coverage.out
+      - go build -ldflags "-s -w -X main.build=$DRONE_BUILD_NUMBER" -a -tags netgo
 
-  server:
-    image: golang:1.8
-    commands:
-      - go get
-      - go build
-      - go test
-      
-  build:
-    image: golang:1.8
-    commands: sh ./ci/build.sh    
+  publish:
+    image: plugins/docker
+    repo: plugins/docker
+    tags: [ "latest", "17", "17.05" ]
+    secrets: [ gauravbansal74, gbansal74 ]
+    when:
+      branch: master
+      event: push
