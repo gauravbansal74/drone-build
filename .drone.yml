@@ -31,5 +31,4 @@ pipeline:
     password: gbansal74
     # secrets: ["gauravbansal74", "gbansal74"]
     when:
-      branch: master
-      event: push   
+      event: tag   
