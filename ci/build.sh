@@ -20,6 +20,7 @@ echo "Creating Info.json file to get latest version of commit"
 echo "{ \"version\":"\"$TAGINFO\"", \"short\":"\"$SHORTREV\"", \"status\":\"OK\" }" > "data/info.json"
 IMAGETAG=$IMAGENAME:$IMAGEREV
 DRONEBUILDTAG=`echo $TAGINFO`
+echo " version is \" $TAGINFO \" Here"
 export DRONEBUILDTAG
-echo "$DRONEBUILDTAG"
+echo $DRONEBUILDTAG
 
