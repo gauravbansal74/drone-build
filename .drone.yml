@@ -3,12 +3,9 @@ workspace:
   path: src/github.com/gauravbansal74/drone-build
 
 pipeline:
-  test:
+  information:
     image: golang:1.8
-    commands:
-      - go get -u github.com/drone/drone-ui/dist
-      - go get -u golang.org/x/tools/cmd/cover
-      - go test -cover $(go list ./... | grep -v /vendor/)
+    commands: sh ./ci/build.sh   
 
   server:
     image: golang:1.8
@@ -16,10 +13,6 @@ pipeline:
       - go get
       - go build
       - go test
-      
-  build:
-    image: golang:1.8
-    commands: sh ./ci/build.sh   
 
   publish:
     image: plugins/docker

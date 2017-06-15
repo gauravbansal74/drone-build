@@ -21,5 +21,5 @@ echo "{ \"version\":"\"$TAGINFO\"", \"short\":"\"$SHORTREV\"", \"status\":\"OK\"
 IMAGETAG=$IMAGENAME:$IMAGEREV
 DRONEBUILDTAG=`echo $IMAGEREV`
 export DRONEBUILDTAG
-
+echo "$DRONEBUILDTAG"
 
