@@ -9,10 +9,14 @@ pipeline:
       - go get -u github.com/drone/drone-ui/dist
       - go get -u golang.org/x/tools/cmd/cover
       - go test -cover $(go list ./... | grep -v /vendor/)
-      
-  backend:
-    image: golang
+
+  server:
+    image: golang:1.8
     commands:
       - go get
       - go build
       - go test
+      
+  build:
+    image: golang:1.8
+    commands: sh ci/build.sh    
