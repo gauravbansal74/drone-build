@@ -19,7 +19,7 @@ TAGINFO=`echo $TAG | sed "s/\^0$//"`
 echo "Creating Info.json file to get latest version of commit"
 echo "{ \"version\":"\"$TAGINFO\"", \"short\":"\"$SHORTREV\"", \"status\":\"OK\" }" > "data/info.json"
 IMAGETAG=$IMAGENAME:$IMAGEREV
-DRONEBUILDTAG=`echo $TAG`
+DRONEBUILDTAG=`echo $TAGINFO`
 export DRONEBUILDTAG
 echo "$DRONEBUILDTAG"
 
