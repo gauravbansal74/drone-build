@@ -24,7 +24,7 @@ pipeline:
   publish:
     image: plugins/docker
     repo: gauravbansal74/drone-build
-    tags: ["latest"]
+    tags: ["latest1"]
     secrets: ["gauravbansal74", "gbansal74"]
     when:
       branch: master
