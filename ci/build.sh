@@ -18,8 +18,7 @@ CGO_ENABLED=0 GOOS=linux go build -a -tags netgo -ldflags '-w' .
 TAGINFO=`echo $TAG | sed "s/\^0$//"`
 echo "Creating Info.json file to get latest version of commit"
 echo "{ \"version\":"\"$TAGINFO\"", \"short\":"\"$SHORTREV\"", \"status\":\"OK\" }" > "data/info.json"
-IMAGEREV="latest"
 IMAGETAG=$IMAGENAME:$IMAGEREV
-docker version
-echo "Building Docker image with tag $IMAGETAG..."
-docker build -t $IMAGETAG .
+export drone-build-tag=$IMAGEREV
+
+
