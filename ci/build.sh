@@ -12,7 +12,7 @@ if [ $TAG != "undefined" ]; then
 else
     IMAGEREV="$BRANCH-$SHORTREV"
     echo "Using tag $IMAGEREV"
-    TAGINFO="$IMAGEREV"
+    TAGINFO="$SHORTREV"
 fi
 
 CGO_ENABLED=0 GOOS=linux go build -a -tags netgo -ldflags '-w' .
