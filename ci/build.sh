@@ -20,6 +20,6 @@ echo "Creating Info.json file to get latest version of commit"
 echo "{ \"version\":"\"$TAGINFO\"", \"short\":"\"$SHORTREV\"", \"status\":\"OK\" }" > "data/info.json"
 
 IMAGETAG=$IMAGENAME:$IMAGEREV
-echo `docker version`
+echo docker version
 echo "Building Docker image with tag $IMAGETAG..."
 docker build -t $IMAGETAG .
