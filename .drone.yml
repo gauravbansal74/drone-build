@@ -24,8 +24,8 @@ pipeline:
   publish:
     image: plugins/docker
     repo:  gauravbansal74/drone-build
-    # commands: 
-    #   - echo ${DRONE_TAG}
+    commands: 
+      - ls
     # tags: 
     tags: ${DRONE_COMMIT_SHA:0:8}
     username: gauravbansal74
