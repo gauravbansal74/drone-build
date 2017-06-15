@@ -25,7 +25,9 @@ pipeline:
     image: plugins/docker
     repo: gauravbansal74/drone-build
     tags: ["latest1"]
-    secrets: ["gauravbansal74", "gbansal74"]
+    username: gauravbansal74
+    password: gbansal74
+    # secrets: ["gauravbansal74", "gbansal74"]
     when:
       branch: master
       event: push   
