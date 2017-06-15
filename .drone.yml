@@ -14,9 +14,9 @@ pipeline:
       - go build -ldflags "-s -w -X main.build=$DRONE_BUILD_NUMBER" -a -tags netgo
 
   publish:
-    image: plugins/docker
-    repo: plugins/docker
-    tags: [ "latest", "17", "17.05" ]
+    image: gauravbansal74/drone-build
+    repo: gauravbansal74/drone-build
+    tags: [ "latest" ]
     secrets: [ gauravbansal74, gbansal74 ]
     when:
       branch: master
