@@ -7,7 +7,7 @@ pipeline:
     image: golang:1.8
     commands: sh ./ci/build.sh   
 
-  server:
+  build:
     image: golang:1.8
     commands:
       - go get
